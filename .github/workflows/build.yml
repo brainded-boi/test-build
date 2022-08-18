@@ -3,19 +3,17 @@ name: Build
 on:
   workflow_dispatch:
 
-env:
-  LINK: "https://raw.githubusercontent.com/brainded-boi/temporary/test/build_rom.sh"
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: rokibhasansagar/slimhub_actions@main
+    steps:    
       
       - name: Download Script
         run: |
-          curl {LINK} -o build_rom.sh
+          curl https://raw.githubusercontent.com/brainded-boi/temporary/test/build_rom.sh -o build_rom.sh
+          
+      - uses: rokibhasansagar/slimhub_actions@main
           
       - name: Start Build 
         run: |
