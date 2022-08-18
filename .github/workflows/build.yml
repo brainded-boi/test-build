@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+env:
+  LINK: "https://raw.githubusercontent.com/brainded-boi/temporary/RMX2185-Havoc-OS-eleven-BraindedBoi/build_rom.sh"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: rokibhasansagar/slimhub_actions@main
+      
+      - name: Download Script
+        run: |
+          curl ${{ secrets.CONF }} -o build_rom.sh
+          
+      - name: Start Build 
+        run: |
+          bash build_rom.sh         
