@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  LINK: "https://raw.githubusercontent.com/brainded-boi/temporary/RMX2185-Havoc-OS-eleven-BraindedBoi/build_rom.sh"
+  LINK: "https://raw.githubusercontent.com/brainded-boi/temporary/test/build_rom.sh"
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       
       - name: Download Script
         run: |
-          curl ${{ secrets.CONF }} -o build_rom.sh
+          curl {LINK} -o build_rom.sh
           
       - name: Start Build 
         run: |
